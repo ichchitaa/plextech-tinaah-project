@@ -1,6 +1,9 @@
 # Flask Group Project - Plitter
 In this project, you will work will your group to build a fully functional backend for a twitter like product: Plitter
 
+## Installation
+- Run `pip install flask requests`
+
 ## Specification
 All of the request payloads are JSON, and the responses should also all be JSON.
 In Plitter, there are preregistered users that make pleets (tweets). There is a character limit of 50 characters.
@@ -130,9 +133,11 @@ These are the individual methods of this project:
         "message": "User Profile Successfully edited!"
     }
 - Sample Response (404):
+```
     {
         "message": "User not found!"
     }
+```
 - Note that really the only user field that can be edited is the display name.
 
 ## General Tips
@@ -143,6 +148,6 @@ These are the individual methods of this project:
 - Run main.py from the `src` directory with the command `python app.py`
 
 ## Testing
-- There is a testing directory, when you think you are done, you can run `python -m unittest testing.py` from the testing directory
-- This will reset your data file!
+- **Before** you run any tests, it is important that the data is clean, as it was in the start, to accomplish this, run `python reset_data.py` in the `src` directory, then restart the server, and only then run tests
+- There is a testing directory, when you think you are done, you can run `python testing.py` from the testing directory
 - The test file assumes *everything* is implemented, so do not use it to test a specific method. Test on your own using Postman like you did last time.
