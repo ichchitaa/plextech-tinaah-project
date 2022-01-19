@@ -13,6 +13,7 @@ These are the individual methods of this project:
 ### GET an individual pleet by a pleet_id
 - Request URL: `/pleets/{pleet_id}` (GET)
 - Sample Response (200):
+```
     {
         "pleet_id": "45be55eb-27d1-4350-8d51-9ca2512229ea",
         "user": {
@@ -23,11 +24,13 @@ These are the individual methods of this project:
         "text": "Sample pleet",
         "datetime": 1642567497
     }
+```
 - Sample Response (404):
+```
     {
         "message": "Pleet not found!"
     }
-
+```
 - This is the structure of a single Pleet
 - Each "_id" field are what are called UUIDs. These are good ways to get a unique id. In python, you can easily generate one by:
     import uuid
@@ -38,6 +41,7 @@ These are the individual methods of this project:
 ### GET top 10 recent pleets
 - Request URL `/pleets` (GET)
 - Sample Response (200):
+```
     {
         "pleets": [
             {
@@ -63,13 +67,14 @@ These are the individual methods of this project:
             ... # up to 8 more pleets
         ]
     }
-
+```
 - It is very simply just an array of 10 pleets where each pleet is the same structure as seen before
 - Note that a pleet can have any utf-8 characters, like emojis, non-latin text.
 
 ### GET all pleets of a particular user_id
 - Request URL: `/users/{user_id}/pleets` (GET)
 - Response (200):
+```
     {
         "pleets": [
             {
@@ -85,53 +90,70 @@ These are the individual methods of this project:
             ... # more pleets by charlie
         ]
     }
+```
 - Sample Response (404):
+```
     {
         "message": "User not found!"
     }
+```
 
 - Similar to method before, but all pleets by a single user
 
 ### POST make a new pleet
 - Request URL: `/pleets` (POST)
 - Sample Request Body:
+```
     {
         "username": "charlie",
         "text": "New project just dropped!"
     }
+```
 - Sample Response (200):
+```
     {
         "message": "Pleet successfully added!"
     }
+```
 - Sample Response (404):
+```
     {
         "message": "User not found!"
     }
+```
 - Note that anyone can pleet from any username
 
 ### DELETE a pleet
 - Request URL: `/pleets/{pleet_id}` (DELETE)
 - Sample Response (200):
+```
     {
         "message": "Pleet successfully deleted!"
     }
+```
 - Sample Response (404):
+```
     {
         "message": "Pleet not found!"
     }
+```
 - Note that anyone can delete a pleet from any username 
 
 
 ### PUT edit profile
 - Request URL: `/users/{user_id}` (PUT)
 - Sample Request Body:
+```
     {
         "display name": "Rhythmmmmm Seth"
     }
+```
 - Sample Response (200):
+```
     {
         "message": "User Profile Successfully edited!"
     }
+```
 - Sample Response (404):
 ```
     {
