@@ -2,7 +2,13 @@
 In this project, you will work will your group to build a fully functional backend for a twitter like product: Plitter
 
 ## Installation
-- Run `pip install flask requests`
+You will need to add a virtual environment for this project where you will install your dependencies.
+
+- In your Flask Group folder, run `python -m venv env`
+- Run `source env/Scripts/activate` to start your virtual environment
+- Run `pip install -r requirements.txt` to install your dependencies
+
+Note that you will have to enter your virtual environment each time you work to have access to Flask
 
 ## Specification
 All of the request payloads are JSON, and the responses should also all be JSON.

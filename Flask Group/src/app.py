@@ -7,7 +7,7 @@ from flask import Flask
 ### If you ever entirely screw up your data file, just copy data.json from testing into src
 ####################
 
-with open("data.json","r") as datafile:
+with open("data.json","r", encoding='utf-8') as datafile:
     rawdata = json.load(datafile)
     Users = rawdata["users"]
     Pleets = rawdata["pleets"]

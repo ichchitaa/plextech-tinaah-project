@@ -6,7 +6,7 @@ import requests
 from time import sleep, time
 
 
-url = "localhost:5001"
+url = "http://127.0.0.1:5001"
 
 sample_pleet = {
     "pleet_id": "45be55eb-27d1-4350-8d51-9ca2512229ea",
