@@ -1,5 +1,6 @@
 import json
 from flask import Flask
+import os
 
 ####################
 ### This block initializes the arrays "Users" and "Pleets" from the json file storage system
@@ -7,13 +8,15 @@ from flask import Flask
 ### If you ever entirely screw up your data file, just copy data.json from testing into src
 ####################
 
-with open("data.json","r", encoding='utf-8') as datafile:
+here = os.path.dirname(os.path.abspath(__file__))
+data = os.path.join(here, "data.json")
+with open(data,"r", encoding='utf-8') as datafile:
     rawdata = json.load(datafile)
     Users = rawdata["users"]
     Pleets = rawdata["pleets"]
 
 def update():
-    with open("data.json","w") as datafile:
+    with open(data,"w") as datafile:
         json.dump({
             "users": Users,
             "pleets": Pleets
