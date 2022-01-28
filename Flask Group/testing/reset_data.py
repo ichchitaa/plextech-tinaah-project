@@ -41,7 +41,10 @@ data = """{
 }
 """
 
-here = os.path.dirname(os.path.abspath(__file__))
-data_file = os.path.join(here, "data.json")
-with open(data_file, "w", encoding="utf-8") as myfile:
-    myfile.write(data)
+def reset():
+    here = os.path.dirname(os.path.abspath(__file__))
+    data_file = os.path.join(here, "../src/data.json")
+    with open(data_file, "w", encoding="utf-8") as myfile:
+        myfile.write(data)
+    
+reset()
