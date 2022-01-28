@@ -31,6 +31,6 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def hello_world ():
-    return "Hello World"
+    return {"data": "Hello World"}
 
 app.run(port=5001)
