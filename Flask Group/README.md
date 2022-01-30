@@ -181,4 +181,5 @@ These are the individual methods of this project:
 - Make sure to have `app.py` running when you are running your tests
 - There is a testing directory, when you think you are done, you can run `pytest` to run all of the tests
 - Use Postman to make sure your routes are working as intended
+- If you want to reset the data.json, run `reset_data.py`
 - If all of your tests are passing, you are done. Congratulations!

@@ -1,4 +1,3 @@
-from reset_data import reset
 import pytest
 import requests
 
@@ -6,7 +5,7 @@ url = "http://127.0.0.1:5001"
 
 @pytest.fixture
 def cleanup():
-    reset()
+    requests.post(f"{url}/reset")
 
 @pytest.mark.usefixtures("cleanup")
 def test_hello_world():
