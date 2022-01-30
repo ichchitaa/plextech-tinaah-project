@@ -3,6 +3,7 @@ In this project, you will work will your group to build a fully functional backe
 
 ## Installation
 You will need to add a virtual environment for this project where you will install your dependencies.
+This basically makes it so that the libraries needed for this project will remain in your local folder, and not crowd storage in your "global" python installation.
 
 - In your Flask Group folder, run `python -m venv env`
 - Run `source env/Scripts/activate` to start your virtual environment
