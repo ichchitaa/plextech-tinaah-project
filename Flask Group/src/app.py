@@ -48,8 +48,4 @@ def after(response):
 def hello_world():
     return {"data": "Hello World"}
 
-@app.route("/pleets", methods=["GET"])
-def f():
-    return {"pleets": Pleets}
-
 app.run(port=5001)
