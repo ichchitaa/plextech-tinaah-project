@@ -174,11 +174,11 @@ These are the individual methods of this project:
 - Make sure to match the format described here in requests and responses **perfectly**, otherwise the tests might not pass
 - Use your Curriculum Officer's help when stuck!
 - Do not modify/touch anything in the testing directory. Just deal with the src directory
-- Do not try to re organize the data storage too much. Use the `Users` and `Pleets` arrays and add dictionaries to them. Run the `update()` function every time you change `Users` and `Pleets`
+- Do not try to re organize the data storage too much. Use the `Users` and `Pleets` arrays and add dictionaries to them. 
 - Run main.py from the `src` directory with the command `python app.py`
 
 ## Testing
-- **Before** you run any tests, it is important that the data is clean, as it was in the start, to accomplish this, run `python reset_data.py` in the `src` directory, then restart the server, and only then run tests
-- There is a testing directory, when you think you are done, you can run `python testing.py` from the testing directory
-- The test file assumes *everything* is implemented, so do not use it to test a specific method. Test on your own using Postman like you did last time.
-- If you don't see any errors and see the message **ALL TESTS PASS**, you are done. Congratulations!
+- Make sure to have `app.py` running when you are running your tests
+- There is a testing directory, when you think you are done, you can run `pytest` to run all of the tests
+- Use Postman to make sure your routes are working as intended
+- If all of your tests are passing, you are done. Congratulations!
