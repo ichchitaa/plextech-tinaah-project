@@ -2,6 +2,8 @@
 ### Very Basic assert based testing
 ### Don't judge please
 
+### DONT USE THIS, KEEPING FOR NOW IN CASE I FORGOT SOMETHING
+
 import requests
 from time import sleep, time
 
