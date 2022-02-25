@@ -49,4 +49,23 @@ def reset_data():
 def hello_world():
     return {"data": "Hello World"}
 
-app.run(port=5001)
+@app.route("/pleets/<pleet_id>", methods=["GET"])
+def get_pleet_by_id(pleet_id):
+    msg = {}
+    for pleet in Pleets:
+        if pleet["_id"] == pleet_id:
+            msg["pleet_id"] = pleet["_id"]
+            for user in Users:
+                if user["_id"] == pleet["user_id"]:
+                    msg["user"] = user
+            msg["text"] = pleet["text"]
+            msg["datetime"] = pleet["datetime"]
+    if msg == {}:
+        return { "message" : "Pleet not found!"}, 404
+    return msg, 200
+
+@app.route("/pleets", methods=["GET"])
+def get_pleet_most_recent(pleet_id):
+    return
+
+app.run(port=5001, debug=True)
