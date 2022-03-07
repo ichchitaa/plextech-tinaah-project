@@ -50,22 +50,28 @@ def hello_world():
     return {"data": "Hello World"}
 
 @app.route("/pleets/<pleet_id>", methods=["GET"])
-def get_pleet_by_id(pleet_id):
-    msg = {}
+def get_pleets_by_id(pleet_id):
     for pleet in Pleets:
-        if pleet["_id"] == pleet_id:
-            msg["pleet_id"] = pleet["_id"]
+        if pleet['_id'] == pleet_id:
+            msg = {}
+            msg['pleet_id'] = pleet_id
+            associate_user = {}
             for user in Users:
-                if user["_id"] == pleet["user_id"]:
-                    msg["user"] = user
-            msg["text"] = pleet["text"]
-            msg["datetime"] = pleet["datetime"]
-    if msg == {}:
-        return { "message" : "Pleet not found!"}, 404
-    return msg, 200
+                if user['_id'] == pleet['user_id']:
+                    associate_user = user
+            msg['user'] = associate_user
+            msg['text'] = pleet['text']
+            msg['datetime'] = pleet['datetime']
+            return msg, 200
+    return {"message": "Pleet not found!"}, 404
 
 @app.route("/pleets", methods=["GET"])
-def get_pleet_most_recent(pleet_id):
-    return
+def get_pleets_top_ten():
+    pleets_data = {}
+    for pleet in Pleets:
+        pleets_data[pleet['_id']] = pleet['datetime']
+    sorted_pleets = sorted(pleets_data, key=lambda k: pleets_data[k], reverse=True)
+    print(sorted_pleets)
+    return {"data": 0}, 200
 
 app.run(port=5001, debug=True)
