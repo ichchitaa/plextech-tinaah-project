@@ -69,3 +69,56 @@ def post():
         return {"review": new_review["text"], "user_id": new_review["_id"], "username": new_review["user_id"]}, 200
     else: 
         return {"review": new_review["text"], "user_id": new_review["_id"]}, 200
+
+@app.route('/review/<id>', methods = ['GET'])
+def method(id):
+    for review in reviews:
+        if review["id"] == id:
+            return review, 200
+    return {"message": "User not found"}, 404
+
+@app.route('/review', methods = ['POST'])
+def method2():
+    review = request.json
+    if not review["overall_rating"] or review["overall_rating"] < 0 or review["overall_rating"] > 10:
+        return {"message": "Error with overall rating"}, 404
+    return {
+        "id": uuid.uuid4(),, #randomly generated
+        "user_id": review["id"],
+        "review": review,
+        "overall_rating": review["overall_rating"],
+        "nutrition_rating": review["nutrition_rating"],
+        "taste_rating": review["taste_rating"],
+        "cafe_type": review["cafe_type"],
+        "anonymous": review["anonymous"],
+        "image": review["image"]
+    }, 200
+
+app.run(host='0.0.0.0', port=81, debug = True)
+
+
+#AMAL'S Work:
+
+Reviews = []
+
+@app.route("/pleets/<pleet_id>", methods=["DELETE"])
+def delete_review(review_id):
+    index = 0
+    for review in Reviews:
+        # index += 1
+        if review["_id"] == review_id:
+            Reviews.remove(review)
+            update()
+            return {"message": "Review succesfully deleted"}, 200
+    return {"message": "Review not found!"}, 404
+
+
+@app.route("/users/<user_id>", methods=["PUT"])
+def put_review(review_id):
+    data = request.json
+    for review in Reviews:
+        if review["_id"] == review_id:
+            review["display name"] = data["display name"]
+            update()
+            return {"message": "User Profile Successfully edited!"}, 200
+    return {"message": "User not found!"}, 404
