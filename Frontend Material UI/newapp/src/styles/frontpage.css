@@ -40,7 +40,7 @@
   #intro {
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: 10px;
+    margin-top: 5px;
   }
   
   #name {
@@ -63,16 +63,44 @@
   
   .title {
     background-color: palegoldenrod;
-    height: 800px;
+    height: 1000px;
   }
   
   #grid1 {
     background-color: yellow;
-    height: 180px;
+    height: 320px;
   }
   
   #grid2 {
     background-color: greenyellow;
-    height: 180px;
+    height: 320px;
+  }
+  
+  #img1 {
+    height: 170px;
+    margin-left: 210px;
+    margin-top: 10px;
+    width: 300px;
+  }
+  
+  #img2 {
+    height: 170px;
+    margin-left: 210px;
+    margin-top: 10px;
+    width: 300px;
+  }
+  
+  #img3 {
+    height: 170px;
+    margin-left: 210px;
+    margin-top: 10px;
+    width: 300px;
+  }
+  
+  #img4 {
+    height: 170px;
+    margin-left: 210px;
+    margin-top: 10px;
+    width: 300px;
   }
   
