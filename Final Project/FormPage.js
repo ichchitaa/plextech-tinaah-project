@@ -1,7 +1,7 @@
 import './FormPage.css';
 import { FormControl, InputLabel, MenuItem, Rating, Select, TextField, Typography, Box, Slider, Button } from '@mui/material';
 import { useState } from 'react';
-
+import { blue } from '@mui/material/colors';
 function FormPage() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -55,13 +55,15 @@ function FormPage() {
   return (
     <div className="App">
       <div className="header">
-        <p1>FORM PAGE</p1>
+        <h1 style = {{fontSize:50}}>FORM PAGE</h1>
       </div>
 
       <div className="body">
           <div className="form">
           <div className = "form-group">
-
+            <div className='element'>
+              <h3>Post your review about cafeteria!</h3>
+            </div>
             <div className='element'>
               <TextField style = {{width: "300px"}} id="outlined-basic" label="FirstName" variant="outlined" value = {firstName} onChange = {(event, value) => setFirstName(value)}/>
             </div>
@@ -95,8 +97,9 @@ function FormPage() {
               </FormControl>
               </div>
           </div>
-          
-            <Typography variant="h6">Rating</Typography>
+            <div className='element'>
+              <h3>Rate your experience!</h3>
+            </div>
             <div className='element'>
               <Typography component="legend">Taste</Typography>
               <Rating
@@ -148,7 +151,9 @@ function FormPage() {
                   style = {{width: "300px"}}
                 />
               </div>
-
+            <div className='element'>
+              <h3>Waiting Time (min)</h3>
+            </div>
               <div className='element'>
               <Box sx={{ width: 300 }}>
               <Slider

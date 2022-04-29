@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  margin-left: 28%;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -32,11 +36,13 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.header{
+
+.header {
   background-color: #61dafb;
   height: 200px;
   display: flex;
@@ -45,14 +51,20 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  max-width: 800px;
+
 }
+
 .body {
   background-color: beige;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 1200px;
+  max-width: 800px;
+
 }
+
 .element {
   margin-top: 30px;
 }
