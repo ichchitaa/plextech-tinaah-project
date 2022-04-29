@@ -1,4 +1,5 @@
 import json
+from re import M
 from flask import Flask
 import os
 from flask import request
@@ -56,7 +57,12 @@ def hello_world():
 def get_pleets_by_id(pleet_id):
     for pleet in Pleets:
         if pleet['_id'] == pleet_id:
-            msg = {}
+            msg = {
+                'pleet_id' : '',
+                'user' : {},
+                'text' : '',
+                'datetime' : ''
+            }
             msg['pleet_id'] = pleet_id
             associate_user = {}
             for user in Users:
@@ -110,7 +116,12 @@ def post():
             user_id = user["_id"]
     if not exist:
         return { "message" : "User not found!" }, 404
-    new_pleet = {}
+    new_pleet = {
+        'id' : '',
+        'user_id' : '',
+        'text' : '',
+        'datetime' : ''
+    }
     new_pleet["_id"] = str(uuid.uuid4())
     new_pleet["user_id"] = user_id
     new_pleet["text"] = data["text"]
