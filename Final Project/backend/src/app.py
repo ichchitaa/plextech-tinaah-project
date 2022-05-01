@@ -13,6 +13,20 @@ user_collection = db_user.user_collection
 db_review = client.reviews
 review_collection = db_review.review_collection
 
+@app.route("/users/<username>", methods=["GET"])
+def users_get(username):
+    exists = False
+    user = user_collection.find_one({"username" : username})
+    if(user):
+        exists = True
+    if exists == False:
+        return { 'message' : 'User not found!'}, 404
+    response_data = {}
+    response_data["username"] = user["username"]
+    response_data["name"] = user["name"]
+    response_data["password"] = user["password"]   
+    return response_data, 200
+
 @app.route("/reviews/<cafe_type>/<username>", methods=["GET"])
 def reviews_get(cafe_type, username):
     if not user_collection.find_one({"username" : username}):
@@ -31,12 +45,12 @@ def reviews_get(cafe_type, username):
         output.append(temp)
     return {"result": output}, 200
 
-@app.route("/reviews", methods=["POST"])
-def reviews_post():
-    data = request.json
-    if user_collection.find_one({"username" : data['username'], "cafe_type" : data['cafe_type']}):
-        return {"message": "review for this cafe is already posted by this user"}, 400
-    post = {
+@app.route("/reviews/<cafe_type>", methods=["GET"])
+def reviews_get_by_cafe(cafe_type):
+    reviews = review_collection.find({"cafe_type" : cafe_type})
+    output = []
+    for data in reviews:
+        temp = {
             "username": data['username'],
             "taste_rating": data['taste_rating'],
             "visual_rating": data['visual_rating'],
@@ -44,28 +58,48 @@ def reviews_post():
             "cafe_type" : data['cafe_type'],
             "review" : data['review']
         }
+        output.append(temp)
+    return {"result": output}, 200
+
+@app.route("/ratings/<cafe_type>", methods=["GET"])
+def ratings_get(cafe_type):
+    reviews = review_collection.find({"cafe_type" : cafe_type})
+    output = {
+        "cafe_type" : cafe_type,
+        "taste_rating_avg" : 0,
+        "visual_rating_avg" : 0,
+        "nutrition_rating_avg" : 0
+    }
+    taste_rating_sum = 0
+    visual_rating_sum = 0
+    nutrition_rating_sum = 0
+    count = 0
+    for data in reviews:
+        taste_rating_sum += data['taste_rating']
+        visual_rating_sum += data['visual_rating']
+        nutrition_rating_sum += data['nutrition_rating']
+        count += 1
+    output['taste_rating_avg'] = round(taste_rating_sum / count, 1)
+    output['visual_rating_avg'] = round(visual_rating_sum / count, 1)
+    output['nutrition_rating_avg'] = round(nutrition_rating_sum / count, 1)
+    return output, 200
+
+@app.route("/reviews", methods=["POST"])
+def reviews_post():
+    data = request.json
+    if user_collection.find_one({"username" : data['username'], "cafe_type" : data['cafe_type']}):
+        return {"message": "review for this cafe is already posted by this user"}, 400
+    post = {
+        "username": data['username'],
+        "taste_rating": data['taste_rating'],
+        "visual_rating": data['visual_rating'],
+        "nutrition_rating": data['nutrition_rating'],
+        "cafe_type" : data['cafe_type'],
+        "review" : data['review']
+    }
     post_id = review_collection.insert_one(post).inserted_id
     print(str(post_id))
     return {"message": "review added successfully"}, 200
-
-
-@app.route("/<username>", methods=["GET"])
-def get_reviews_of_user(username):
-    exists = False
-    if(user_collection.find_one({"username" : username})):
-        exists = True
-    if exists == False:
-        return { 'message' : 'User not found!'}, 404
-    thisuser = user_collection.find_one({"username" : username})
-    response_data = {}
-    response_data["username"] = username
-    response_data["name"] = thisuser["name"]
-    response_data["password"] = thisuser["password"]
-    # response_data['reviews'] = []
-    # reviews = review_collection.find({'username': username})
-    # for rev in reviews:
-    #     response_data['reviews'].append(rev)      
-    return response_data, 200
 
 @app.route("/users", methods=["POST"])
 def post():
