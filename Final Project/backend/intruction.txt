@@ -1,0 +1,13 @@
+1. When you are in the backend folder, when you see the env folder and the src folder, type
+    source env/bin/activiate
+2. Once you are in the virtual environment, to install all the required packages, run
+    pip install -r requirements.txt
+3. Go into app.py, start modifying, code, and have fun :) 
+    (refer to Instruction for backend section)
+4. To start the server, simply run
+    python app.py
+
+Instruction for backend file app.py
+1. You would see we have the same Flash structure, but with MongoClient, certifi, and CORS as something new
+2. Don't worry about CORS and certifi for now, MongoClient is more important to learn
+3. Reference: https://pymongo.readthedocs.io/en/stable/tutorial.html
