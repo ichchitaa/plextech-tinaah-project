@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import pic from "../images/plitter.png";
+import pic from "../images/caleats.png";
 import "../styles/LogInPage.css";
 
 function LogIn() {
