@@ -66,6 +66,7 @@ def ratings_get(cafe_type):
     reviews = review_collection.find({"cafe_type" : cafe_type})
     output = {
         "cafe_type" : cafe_type,
+        "overall_rating_avg" : 0,
         "taste_rating_avg" : 0,
         "visual_rating_avg" : 0,
         "nutrition_rating_avg" : 0
@@ -82,6 +83,7 @@ def ratings_get(cafe_type):
     output['taste_rating_avg'] = round(taste_rating_sum / count, 1)
     output['visual_rating_avg'] = round(visual_rating_sum / count, 1)
     output['nutrition_rating_avg'] = round(nutrition_rating_sum / count, 1)
+    output['overall_rating_avg'] = round((nutrition_rating_sum + visual_rating_sum + taste_rating_sum) / count / 3, 1)
     return output, 200
 
 @app.route("/reviews", methods=["POST"])
