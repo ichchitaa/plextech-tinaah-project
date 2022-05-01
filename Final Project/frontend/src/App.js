@@ -17,7 +17,7 @@ function App() {
           element={
             <div>
               <ReviewPageTop cafe_type="cafe_3" />
-              <Comments />
+              <Comments cafe_type="cafe_3" />
             </div>
           }
         />
@@ -26,7 +26,7 @@ function App() {
           element={
             <div>
               <ReviewPageTop cafe_type="crossroads" />
-              <Comments />
+              <Comments cafe_type="crossroads" />
             </div>
           }
         />
@@ -35,7 +35,7 @@ function App() {
           element={
             <div>
               <ReviewPageTop cafe_type="foothill" />
-              <Comments />
+              <Comments cafe_type="foothill" />
             </div>
           }
         />
@@ -44,7 +44,7 @@ function App() {
           element={
             <div>
               <ReviewPageTop cafe_type="clark_kerr_campus" />
-              <Comments />
+              <Comments cafe_type="clark_kerr_campus" />
             </div>
           }
         />
