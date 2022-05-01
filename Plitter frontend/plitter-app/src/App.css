@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.photo1 {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.video1 {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.article1 {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+/* .box {
+  display: flex;
+  flex-direction: row;
+} */
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+#fname {
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#p1 {
+  margin-right: 20px;
+  color: blue;
+}
+
+#p2 {
+  margin-right: 20px;
+  color: blue;
+}
+
+#p3 {
+  margin-right: 20px;
+  color: blue;
+}
+
+.title {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: large;
+}
+
+#iddd {
+  margin-left: 10px;
+  width: 70px;
+}
+
+.overall {
+  background-color: #61dafb;
+  height: 400px;
+  width: 800px;
+}
