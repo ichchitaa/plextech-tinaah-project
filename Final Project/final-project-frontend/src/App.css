@@ -1,0 +1,39 @@
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #ecd552;
+  color: black;
+  font-size: 30px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.page {
+  background-image: linear-gradient(to bottom right, #5880ec,rgb(224, 232, 247));
+  padding-bottom: 30px;  
+  color: black; 
+  font-size: 15px; 
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.picture {
+  display: block;
+  width: 40%;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: auto;
+  border: 2px solid #555
+}
+
+.overall {
+  font-size: 15px; 
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.picture {
+  display: block;
+  width: 40%;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: auto;
+  border: 2px solid #555
+}
