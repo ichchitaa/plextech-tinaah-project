@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReviewPageTop from "./components/ReviewPageTop.js";
 import FormPage from "./components/FormPage.js";
 import Comments from "./components/Comments.js";
+import LogIn from "./components/LogInPage.js";
 import { Cookie } from "@mui/icons-material";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<FrontPage />} />
+        <Route path="/login" element={<LogIn />} />
         <Route
           path="cafe_3"
           element={
