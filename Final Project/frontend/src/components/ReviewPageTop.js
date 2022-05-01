@@ -9,6 +9,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { Link } from "react-router-dom";
 import salad from "../images/organic_salad.jpg";
 
 function ReviewPageTop(props) {
@@ -42,7 +43,9 @@ function ReviewPageTop(props) {
       <div class="header">
         <div class="header-parent">
           <div class="leftheader">
-            <img class="logo" src={caleats} alt="CalEats Logo"></img>
+            <Link to="/">
+              <img class="logo" src={caleats} alt="CalEats Logo"></img>
+            </Link>
           </div>
           <div class="centerheader">
             <h1>{loadName(props.cafe_type)}</h1>
@@ -51,7 +54,9 @@ function ReviewPageTop(props) {
             </a>
           </div>
           <div class="rightheader">
-            <img class="logo" src={caleats} alt="CalEats Logo"></img>
+            <Link to="/">
+              <img class="logo" src={caleats} alt="CalEats Logo"></img>
+            </Link>{" "}
           </div>
         </div>
       </div>
