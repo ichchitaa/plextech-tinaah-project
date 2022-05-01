@@ -49,7 +49,7 @@ function App() {
           <Grid container>
           <Grid item xs={6} style={{background:yellow}} id="grid2">
           <Typography id="name" variant="h3" align='center'>Cafe 3</Typography>
-          <Typography variant="h5" align='center'>Average rating today:</Typography>
+          <Typography variant="h3" align='center'>Average rating today:</Typography>
           <img id="img1" src={cafe3} />
         </Grid>
         <Grid item xs={6} style={{background:pink}} id="grid1">
