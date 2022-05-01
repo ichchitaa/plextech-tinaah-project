@@ -1,3 +1,4 @@
 Flask Group/env
 Flask Group/*/__pycache__
 Flask Group/.pytest_cache
+.DS_Store

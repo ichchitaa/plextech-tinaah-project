@@ -1,0 +1,152 @@
+.userbio {
+  inline-size: 860px;
+  text-align: left;
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;
+  position: absolute; 
+  top: 130px;
+  right: 105px;  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.babydev {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; 
+  border: 5px solid #fe8700;
+  position: absolute; 
+  top: 50px;
+  left: 80px; 
+}
+
+.buttons{
+  position: absolute; 
+  top: 90px;
+  left: 50px; 
+}
+
+.username{
+  position: absolute; 
+  top: 150px;
+  left: 50px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: white;
+}
+.userprofile{
+  background-image: linear-gradient(to bottom right, rgb(77, 147, 228), #d5e2f3);
+  min-height: 50vh;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  font-family: Georgia, serif; 
+
+}
+
+.followButton{
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-family: Georgia, serif; 
+  position: absolute; 
+  top: 90px;
+  left: 5px;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.followButton:hover {background-color: #f0be72}
+
+.followButton:active {
+  background-color: #f3970d;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.messageButton{
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-family: Georgia, serif; 
+  position: absolute; 
+  top: 90px;
+  left: 120px;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+}
+.messageButton:hover {background-color: #f0be72}
+
+.messageButton:active {
+  background-color: #f3970d;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.followers{
+  position: absolute; 
+  top: 80px;
+  right: 800px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fe8700;
+}
+
+.pleets{
+  position: absolute; 
+  top: 80px;
+  right: 600px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fe8700;
+}
+
+.following{
+  position: absolute; 
+  top: 80px;
+  right: 350px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fe8700;
+}
+
+.locatedIn{
+  position: absolute; 
+  top: 20px;
+  right: 100px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fe8700;
+}
+.location{
+  position: absolute; 
+  top: 80px;
+  right: 100px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fe8700;
+}
+
+.plitterlogo{
+  position: absolute; 
+  top: 300px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+.plug{
+  color: #fe8700; 
+  position: absolute; 
+  top: 280px;
+  right: 685px;
+}
+
