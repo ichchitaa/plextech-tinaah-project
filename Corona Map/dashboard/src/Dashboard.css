@@ -1,0 +1,25 @@
+.board {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    width: 100%
+}
+
+.box {
+    align-items: center;
+    background-color: purple;
+    color: white;
+    height: 100px;
+    width: 200px;
+    
+}
+
+p {
+    padding: 25px;
+    color: white;
+    font-size: medium;
+}
