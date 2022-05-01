@@ -1,12 +1,13 @@
-import HomePage from "./components/homepage.js";
-import ReviewPageTop from "./components/review_page_top.js";
+import FrontPage from "./components/FrontPage.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReviewPageTop from "./components/ReviewPageTop.js";
+import FormPage from "./components/FormPage.js";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<FrontPage />} />
         <Route path="cafe_3" element={<ReviewPageTop cafe_type="cafe_3" />} />
         <Route
           path="crossroads"
@@ -20,6 +21,7 @@ function App() {
           path="clark_kerr_campus"
           element={<ReviewPageTop cafe_type="clark_kerr_campus" />}
         />
+        <Route path="review_form" element={<FormPage />} />
       </Routes>
     </BrowserRouter>
   );
