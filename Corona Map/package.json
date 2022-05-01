@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "create-react-app": "^5.0.0",
     "proxy": "http://localhost:3000"
+=======
+    "create-react-app": "^5.0.0"
+>>>>>>> howard-dev
   }
 }
